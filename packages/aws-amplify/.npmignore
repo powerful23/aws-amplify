@@ -14,6 +14,3 @@ tsfmt.json
 tslint.json
 typeDoc.js
 webpack.config.js
-.npmignore
-lib/**
-dist/**

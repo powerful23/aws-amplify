@@ -8,3 +8,5 @@ packages/*/node_modules/**
 .vscode
 .idea
 *.log
+.gitignore
+packages/*/lib/**
