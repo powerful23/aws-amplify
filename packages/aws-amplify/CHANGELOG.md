@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.4.3-unstable.1"></a>
+## [0.4.3-unstable.1](https://github.com/aws/aws-amplify/compare/aws-amplify@0.4.3-unstable.0...aws-amplify@0.4.3-unstable.1) (2018-06-15)
+
+
+### Bug Fixes
+
+* **aws-amplify:** lalalala ([9c04ced](https://github.com/aws/aws-amplify/commit/9c04ced))
+
+
+
+
 <a name="0.4.3-unstable.0"></a>
 ## [0.4.3-unstable.0](https://github.com/aws/aws-amplify/compare/aws-amplify@0.4.2-unstable.43...aws-amplify@0.4.3-unstable.0) (2018-06-15)
 
