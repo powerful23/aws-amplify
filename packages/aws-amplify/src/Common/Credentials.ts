@@ -16,6 +16,7 @@ export class Credentials {
     private _cacheClass = null;
     private _refreshHandlers = {};
 
+    private abc = null;
     constructor(config) {
         this.configure(config);
         this._refreshHandlers['google'] = GoogleOAuth.refreshGoogleToken;
