@@ -813,21 +813,27 @@ export default class AuthClass {
      * Get current user's session
      * @return - A promise resolves to session object if success
      */
-    public currentSession() : Promise<any> {
+    public async currentSession() : Promise<any> {
         let user:any;
         const that = this;
         logger.debug('Getting current session');
-        if (!this.userPool) { return Promise.reject('No userPool'); }
-        if (Platform.isReactNative) {
-            return this.getSyncedUser().then(user => {
-                if (!user) { 
-                    logger.debug('Failed to get user from user pool');
-                    return Promise.reject('No current user'); 
-                }
-                return that.userSession(user);
-            });
+
+        let federatedInfo = null;
+        try {
+            federatedInfo = await Cache.getItem('federatedInfo');
+        } catch (e) {
+            logger.debug('cannot load federated user from cache');
+        }
+
+        if (federatedInfo) {
+            return federatedInfo;
         } else {
-            user = this.userPool.getCurrentUser();
+            if (!this.userPool) { return Promise.reject('No userPool'); }
+            if (Platform.isReactNative) {
+                user = await this.getSyncedUser();
+            } else {
+                user = this.userPool.getCurrentUser();
+            }
             if (!user) {
                 logger.debug('Failed to get user from user pool');
                 return Promise.reject('No current user'); 
