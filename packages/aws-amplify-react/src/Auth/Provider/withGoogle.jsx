@@ -31,7 +31,8 @@ export default function withGoogle(Comp) {
         }
 
         federatedSignIn(googleUser) {
-            const { id_token, expires_at } = googleUser.getAuthResponse();
+            const response = googleUser.getAuthResponse();
+            const { id_token, expires_at } = response
             const profile = googleUser.getBasicProfile();
             const user = {
                 email: profile.getEmail(),
@@ -41,7 +42,7 @@ export default function withGoogle(Comp) {
             const { onStateChange } = this.props;
             return Auth.federatedSignIn(
                 'google',
-                { token: id_token, expires_at },
+                { token: id_token, expires_at, session: response },
                 user
             ).then(credentials => {
                 if (onStateChange) {

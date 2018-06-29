@@ -50,10 +50,12 @@ export interface MfaRequiredDetails {
 export interface FederatedResponse {
     // access token
     token: string,
+    // the universal time when token expired
+    expires_at: number,
     // identity id
     identity_id?: string,
-    // the universal time when token expired
-    expires_at: number
+    // session object
+    session?: any
 }
 
 export interface OAuth {

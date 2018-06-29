@@ -1144,10 +1144,10 @@ export default class AuthClass {
      * @param {String} user - user info
      */
     public federatedSignIn(provider: string, response: FederatedResponse, user: object) {
-        const { token, identity_id, expires_at } = response;
+        const { token, identity_id, expires_at, session } = response;
         const that = this;
         return new Promise((res, rej) => {
-            Credentials.set({ provider, token, identity_id, user, expires_at }, 'federation').then((cred) => {
+            Credentials.set({ provider, token, identity_id, user, expires_at, session }, 'federation').then((cred) => {
                 dispatchAuthEvent('signIn', that.user);
                 logger.debug('federated sign in credentials', cred);
                 res(cred);
