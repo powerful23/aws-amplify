@@ -11,11 +11,10 @@
   "scripts": {
     "test": "tslint 'src/**/*.ts' && jest --coverage",
     "build-with-test": "npm build && npm test",
-    "build": "npm run clean && build:umd && build:umd:bundle && build:es",
-    "build:umd:bundle": "webpack",
-    "build:umd": "tsc -p ./tsconfig-umd.json",
-    "build:es": "tsc -p ./tsconfig-es.json",
-    "clean": "rimraf lib lib-esm dist",
+    "build": "npm run build:umd && npm run build:umd:bundle && npm run build:es",
+    "build:umd:bundle": "rimraf dist && webpack",
+    "build:umd": "rimraf lib && tsc -p ./tsconfig-umd.json",
+    "build:es": "rimraf es && tsc -p ./tsconfig-es.json",
     "format": "tsfmt --useTsfmt tsfmt.json -r src/**/*.ts",
     "lint": "tslint 'src/**/*.ts'"
   },
