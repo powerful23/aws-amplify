@@ -443,9 +443,7 @@ export default class AWSPinpointProvider implements AnalyticsProvider {
             appPackageName, 
             ...demographicByClientContext 
         } = clientContext;
-        // const channelType = event.address? ((clientInfo.platform === 'android') ? 'GCM' : 'APNS') : undefined;
         const tmp = {
-            // channelType,
             requestId: uuid(),
             effectiveDate:new Date().toISOString(),
             ...defaultEndpointConfig,
