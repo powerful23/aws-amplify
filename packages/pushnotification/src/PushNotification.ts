@@ -131,13 +131,15 @@ export default class PushNotification {
 
         const { appId } = this._config;
         const cacheKey = 'push_token' + appId;
+        const channelType = Platform.OS === 'ios'? 'APNS' : 'GCM';
         logger.debug('update endpoint in push notification', token);
         AsyncStorage.getItem(cacheKey).then((lastToken) => {
             if (!lastToken || lastToken !== token) {
                 logger.debug('refresh the device token with', token);
                 const config = {
-                    Address: token,
-                    OptOut: 'NONE'
+                    address: token,
+                    channelType,
+                    optOut: 'NONE'
                 };
                 if (Amplify.Analytics && typeof Amplify.Analytics.updateEndpoint === 'function') {
                     Amplify.Analytics.updateEndpoint(config).then((data) => {

@@ -351,7 +351,7 @@ export default class AWSPinpointProvider implements AnalyticsProvider {
 
         this._initClients(config, credentials);
         
-        const request = this._endpointRequest(
+        const request = await this._endpointRequest(
             config, 
             JS.transferKeyToLowerCase(event, [], ['Attributes', 'UserAttributes'])
         );
@@ -415,7 +415,7 @@ export default class AWSPinpointProvider implements AnalyticsProvider {
      * EndPoint request
      * @return {Object} - The request of updating endpoint
      */
-    private _endpointRequest(config, event) {
+    private async _endpointRequest(config, event) {
         const { credentials } = config;
         const clientInfo = this._clientInfo || {};
         const clientContext = config.clientContext || {};
@@ -424,6 +424,9 @@ export default class AWSPinpointProvider implements AnalyticsProvider {
         // clientContext (deprecated)
         // config.endpoint
         const defaultEndpointConfig = config.endpoint || {};
+        const defaultEndpointUserId = typeof defaultEndpointConfig.userId === 'function'?
+            await defaultEndpointConfig.userId() :
+            defaultEndpointConfig.userId;
         const demographicByClientInfo = {
             appVersion: clientInfo.appVersion,
             make: clientInfo.make,
@@ -440,9 +443,9 @@ export default class AWSPinpointProvider implements AnalyticsProvider {
             appPackageName, 
             ...demographicByClientContext 
         } = clientContext;
-        const channelType = event.address? ((clientInfo.platform === 'android') ? 'GCM' : 'APNS') : undefined;
+        // const channelType = event.address? ((clientInfo.platform === 'android') ? 'GCM' : 'APNS') : undefined;
         const tmp = {
-            channelType,
+            // channelType,
             requestId: uuid(),
             effectiveDate:new Date().toISOString(),
             ...defaultEndpointConfig,
@@ -466,7 +469,8 @@ export default class AWSPinpointProvider implements AnalyticsProvider {
                 ...event.metrics
             },
             user: {
-                userId: event.userId || defaultEndpointConfig.userId || credentials.identityId,
+                userId: 
+                    event.userId || defaultEndpointUserId || credentials.identityId,
                 userAttributes: {
                     ...defaultEndpointConfig.userAttributes,
                     ...event.userAttributes
