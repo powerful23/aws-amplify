@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.3-hubTest.0"></a>
+## [2.3.3-hubTest.0](https://github.com/aws/aws-amplify/compare/aws-amplify-react@2.3.3-unstable.6...aws-amplify-react@2.3.3-hubTest.0) (2019-03-26)
+
+
+
+
+**Note:** Version bump only for package aws-amplify-react
+
 <a name="2.3.3-unstable.6"></a>
 ## [2.3.3-unstable.6](https://github.com/aws/aws-amplify/compare/aws-amplify-react@2.3.3-unstable.5...aws-amplify-react@2.3.3-unstable.6) (2019-03-23)
 

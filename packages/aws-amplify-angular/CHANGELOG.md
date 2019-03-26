@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.10-hubTest.0"></a>
+## [2.1.10-hubTest.0](https://github.com/powerful23/aws-amplify/compare/aws-amplify-angular@2.1.10-unstable.10...aws-amplify-angular@2.1.10-hubTest.0) (2019-03-26)
+
+
+
+
+**Note:** Version bump only for package aws-amplify-angular
+
 <a name="2.1.10-unstable.10"></a>
 ## [2.1.10-unstable.10](https://github.com/aws-amplify/amplify-js/compare/aws-amplify-angular@2.1.10-unstable.9...aws-amplify-angular@2.1.10-unstable.10) (2019-03-24)
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.1.23-hubTest.0"></a>
+## [1.1.23-hubTest.0](https://github.com/aws/aws-amplify/compare/aws-amplify@1.1.23-unstable.9...aws-amplify@1.1.23-hubTest.0) (2019-03-26)
+
+
+
+
+**Note:** Version bump only for package aws-amplify
+
 <a name="1.1.23-unstable.9"></a>
 ## [1.1.23-unstable.9](https://github.com/aws/aws-amplify/compare/aws-amplify@1.1.23-unstable.8...aws-amplify@1.1.23-unstable.9) (2019-03-24)
 
