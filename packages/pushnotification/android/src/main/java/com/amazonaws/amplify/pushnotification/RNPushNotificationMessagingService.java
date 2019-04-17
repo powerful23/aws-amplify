@@ -52,6 +52,41 @@ public class RNPushNotificationMessagingService extends FirebaseMessagingService
     private static final String LOG_TAG = "RNPushNotificationMessagingService";
 
     /**
+     * Called when a new token for the default firebase project is generated
+     */
+    @Override
+    public void onNewToken(String token) {
+        Log.v(LOG_TAG, "On new token received: " + token);
+
+        final Bundle bundle = convertTokenToBundle(token);
+        // We need to run this on the main thread, as the React code assumes that is true.
+        // Namely, DevServerHelper constructs a Handler() without a Looper, which triggers:
+        // "Can't create handler inside thread that has not called Looper.prepare()"
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            public void run() {
+                // Construct and load our normal React JS code bundle
+                ReactInstanceManager mReactInstanceManager = ((ReactApplication) getApplication()).getReactNativeHost().getReactInstanceManager();
+                ReactContext context = mReactInstanceManager.getCurrentReactContext();
+                // If it's constructed, send a notification
+                if (context != null) {
+                    sendRegistrationToken((ReactApplicationContext) context, bundle);
+                } else {
+                    // Otherwise wait for construction, then send the notification
+                    mReactInstanceManager.addReactInstanceEventListener(new ReactInstanceManager.ReactInstanceEventListener() {
+                        public void onReactContextInitialized(ReactContext context) {
+                            sendRegistrationToken((ReactApplicationContext) context, bundle);
+                        }
+                    });
+                    if (!mReactInstanceManager.hasStartedCreatingInitialContext()) {
+                        // Construct it in the background
+                        mReactInstanceManager.createReactContextInBackground();
+                    }
+                }
+            }
+        });
+    }
+    /**
      * Called when message is received.
      *
      * @param remoteMessage Object representing the message received from Firebase Cloud Messaging.
@@ -89,6 +124,17 @@ public class RNPushNotificationMessagingService extends FirebaseMessagingService
                 }
             }
         });
+    }
+
+    private void sendRegistrationToken(ReactApplicationContext context, Bundle bundle) {
+        RNPushNotificationJsDelivery jsDelivery = new RNPushNotificationJsDelivery(context);
+        jsDelivery.emitTokenReceived(bundle);
+    }
+
+    private Bundle convertTokenToBundle(String token) {
+        Bundle bundle = new Bundle();
+        bundle.putString("refreshToken", token);
+        return bundle;
     }
 
     private void handleFCMMessagePush(ReactApplicationContext context, Bundle bundle, Boolean isForeground, Boolean hasData) {
