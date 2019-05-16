@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.9-beta.0"></a>
+## [2.3.9-beta.0](https://github.com/aws/aws-amplify/compare/aws-amplify-react@2.3.8...aws-amplify-react@2.3.9-beta.0) (2019-05-16)
+
+
+### Features
+
+* **aws-amplify-react:** allow user to sign up with email or phone number ([b81f89e](https://github.com/aws/aws-amplify/commit/b81f89e))
+
+
+
+
 <a name="2.3.8"></a>
 ## [2.3.8](https://github.com/aws/aws-amplify/compare/aws-amplify-react@2.3.8-unstable.1...aws-amplify-react@2.3.8) (2019-05-14)
 
