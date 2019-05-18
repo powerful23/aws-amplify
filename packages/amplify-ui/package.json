@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/ui",
-  "version": "1.0.20-mod.0",
+  "version": "1.0.20-mod.1",
   "main": "dist/aws-amplify-ui.js",
   "sideEffects": false,
   "publishConfig": {

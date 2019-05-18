@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.31-mod.1"></a>
+## [1.0.31-mod.1](https://github.com/aws/aws-amplify/compare/@aws-amplify/storage@1.0.30...@aws-amplify/storage@1.0.31-mod.1) (2019-05-18)
+
+
+### Bug Fixes
+
+* **@aws-amplify/storage:** expose tree-shaking for Webpack ([28a34a5](https://github.com/aws/aws-amplify/commit/28a34a5))
+
+
+### Features
+
+* **@aws-amplify/storage:** publish ES2015/ESM artifacts ([bc8610a](https://github.com/aws/aws-amplify/commit/bc8610a))
+
+
+
+
 <a name="1.0.31-mod.0"></a>
 ## [1.0.31-mod.0](https://github.com/aws/aws-amplify/compare/@aws-amplify/storage@1.0.30...@aws-amplify/storage@1.0.31-mod.0) (2019-05-18)
 

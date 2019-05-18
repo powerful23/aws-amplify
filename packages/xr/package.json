@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/xr",
-  "version": "0.1.18-mod.0",
+  "version": "0.1.18-mod.1",
   "description": "XR category of aws-amplify",
   "main": "./dist/index.js",
   "module": "./esm/index.js",
@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/aws/aws-amplify#readme",
   "dependencies": {
-    "@aws-amplify/core": "1.0.28-mod.0"
+    "@aws-amplify/core": "1.0.28-mod.1"
   },
   "jest": {
     "globals": {
