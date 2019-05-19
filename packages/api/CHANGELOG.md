@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.36-mod.2"></a>
+## [1.0.36-mod.2](https://github.com/aws/aws-amplify/compare/@aws-amplify/api@1.0.35...@aws-amplify/api@1.0.36-mod.2) (2019-05-19)
+
+
+### Bug Fixes
+
+* **@aws-amplify/api:** expose tree-shaking for Webpack ([768a5f2](https://github.com/aws/aws-amplify/commit/768a5f2))
+
+
+### Features
+
+* **@aws-amplify/api:** publish ES2015/ESM artifacts ([68e0870](https://github.com/aws/aws-amplify/commit/68e0870))
+* **@aws-amplify/core:** publish ES2015/ESM artifacts ([d73d5e1](https://github.com/aws/aws-amplify/commit/d73d5e1))
+
+
+
+
 <a name="1.0.36-mod.1"></a>
 ## [1.0.36-mod.1](https://github.com/aws/aws-amplify/compare/@aws-amplify/api@1.0.35...@aws-amplify/api@1.0.36-mod.1) (2019-05-19)
 

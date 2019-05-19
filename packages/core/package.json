@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/core",
-  "version": "1.0.28-mod.1",
+  "version": "1.0.28-mod.2",
   "description": "Core category of aws-amplify",
   "main": "./dist/index.js",
   "module": "./esm/index.js",

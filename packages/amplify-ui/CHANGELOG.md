@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.0.20-mod.2"></a>
+## [1.0.20-mod.2](https://github.com/powerful23/aws-amplify/compare/@aws-amplify/ui@1.0.19...@aws-amplify/ui@1.0.20-mod.2) (2019-05-19)
+
+
+### Bug Fixes
+
+* **@aws-amplify/ui:** expose tree-shaking for Webpack ([7323c9d](https://github.com/powerful23/aws-amplify/commit/7323c9d))
+
+
+
+
 <a name="1.0.20-mod.1"></a>
 ## [1.0.20-mod.1](https://github.com/powerful23/aws-amplify/compare/@aws-amplify/ui@1.0.19...@aws-amplify/ui@1.0.20-mod.1) (2019-05-19)
 
