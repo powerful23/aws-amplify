@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="1.2.25-mod.1"></a>
+## [1.2.25-mod.1](https://github.com/aws/aws-amplify/compare/@aws-amplify/auth@1.2.24...@aws-amplify/auth@1.2.25-mod.1) (2019-05-19)
+
+
+### Bug Fixes
+
+* **@aws-amplify/auth:** expose tree-shaking for Webpack ([7ad2d4e](https://github.com/aws/aws-amplify/commit/7ad2d4e))
+* **core, auth, aws-amplify-react:** fix tests ([bdd162c](https://github.com/aws/aws-amplify/commit/bdd162c))
+
+
+### Features
+
+* **@aws-amplify/auth:** publish ES2015/ESM artifacts ([6cf2c22](https://github.com/aws/aws-amplify/commit/6cf2c22))
+
+
+
+
 <a name="1.2.25-mod.0"></a>
 ## [1.2.25-mod.0](https://github.com/aws/aws-amplify/compare/@aws-amplify/auth@1.2.24...@aws-amplify/auth@1.2.25-mod.0) (2019-05-19)
 
