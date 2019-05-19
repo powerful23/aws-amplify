@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/analytics",
-  "version": "1.2.16",
+  "version": "1.2.17-mod.0",
   "description": "Analytics category of aws-amplify",
   "main": "./dist/index.js",
   "module": "./esm/index.js",
@@ -31,11 +31,9 @@
     "url": "https://github.com/aws/aws-amplify/issues"
   },
   "homepage": "https://github.com/aws/aws-amplify#readme",
-  "devDependencies": {
-  },
   "dependencies": {
-    "@aws-amplify/cache": "1.0.27",
-    "@aws-amplify/core": "1.0.27",
+    "@aws-amplify/cache": "1.0.28-mod.0",
+    "@aws-amplify/core": "1.0.28-mod.0",
     "uuid": "^3.2.1"
   },
   "jest": {
