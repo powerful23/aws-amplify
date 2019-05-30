@@ -41,7 +41,7 @@
   "dependencies": {
     "uuid": "^3.2.1",
     "zen-observable": "^0.8.6",
-    "@aws-amplify/core": "2.0.0-preivew.0"
+    "@aws-amplify/core": "2.0.0-preview.0"
   },
   "jest": {
     "globals": {

@@ -35,7 +35,7 @@
   "devDependencies": {
   },
   "dependencies": {
-    "@aws-amplify/core": "2.0.0-preivew.0"
+    "@aws-amplify/core": "2.0.0-preview.0"
   },
   "jest": {
     "globals": {
