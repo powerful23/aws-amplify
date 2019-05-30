@@ -1,6 +1,6 @@
 {
   "name": "aws-amplify-angular",
-  "version": "3.0.3",
+  "version": "4.0.0-preview.0",
   "description": "AWS Amplify Angular Components",
   "main": "bundles/aws-amplify-angular.umd.js",
   "module": "dist/index.js",
@@ -67,7 +67,16 @@
     "zone.js": "^0.8.26"
   },
   "dependencies": {
-    "@aws-amplify/ui": "^1.0.19",
     "rxjs-compat": "^6.2.1"
+  },
+  "peerDependencies": {
+    "@aws-amplify/auth": "2.0.x",
+    "@aws-amplify/analytics": "2.0.x",
+    "@aws-amplify/api": "2.0.x",
+    "@aws-amplify/core": "2.0.x",
+    "@aws-amplify/interactions": "2.0.x",
+    "@aws-amplify/storage": "2.0.x",
+    "@aws-amplify/ui": "2.0.x",
+    "@aws-amplify/xr": "1.0.x"
   }
 }

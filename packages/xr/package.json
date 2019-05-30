@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/xr",
-  "version": "1.0.0",
+  "version": "1.0.0-preview.0",
   "description": "XR category of aws-amplify",
   "main": "./index.js",
   "module": "./esm/index.js",

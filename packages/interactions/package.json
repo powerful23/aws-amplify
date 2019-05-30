@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/interactions",
-  "version": "2.0.0",
+  "version": "2.0.0-preview.0",
   "description": "Interactions category of aws-amplify",
   "main": "./index.js",
   "module": "./esm/index.js",
