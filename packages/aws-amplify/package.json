@@ -1,6 +1,6 @@
 {
   "name": "aws-amplify",
-  "version": "2.0.0-preview.0",
+  "version": "2.0.0-preview.1",
   "description": "AWS Amplify is a JavaScript library for Frontend and mobile developers building cloud-enabled applications.",
   "main": "./index.js",
   "module": "./esm/index.js",
@@ -31,8 +31,6 @@
     "url": "https://github.com/aws/aws-amplify/issues"
   },
   "homepage": "https://github.com/aws/aws-amplify#readme",
-  "devDependencies": {
-  },
   "dependencies": {
     "@aws-amplify/analytics": "2.0.x",
     "@aws-amplify/api": "2.0.x",

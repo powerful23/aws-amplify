@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0-preview.1"></a>
+# [3.0.0-preview.1](https://github.com/aws/aws-amplify/compare/aws-amplify-react@2.3.8...aws-amplify-react@3.0.0-preview.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **core, auth, aws-amplify-react:** fix tests ([bdd162c](https://github.com/aws/aws-amplify/commit/bdd162c))
+* German localisation ([80c87ea](https://github.com/aws/aws-amplify/commit/80c87ea))
+
+
+### Features
+
+* **aws-amplify-react): publish ES2015/ESM artifacts:** publish ES2015/ESM artifacts ([3a60350](https://github.com/aws/aws-amplify/commit/3a60350))
+
+
+
+
 <a name="2.3.8"></a>
 ## [2.3.8](https://github.com/aws/aws-amplify/compare/aws-amplify-react@2.3.8-unstable.1...aws-amplify-react@2.3.8) (2019-05-14)
 

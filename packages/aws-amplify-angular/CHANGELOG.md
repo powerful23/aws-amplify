@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0-preview.1"></a>
+# [4.0.0-preview.1](https://github.com/powerful23/aws-amplify/compare/aws-amplify-angular@3.0.3...aws-amplify-angular@4.0.0-preview.1) (2019-05-30)
+
+
+### Bug Fixes
+
+* **aws-amplify-angular:** declare [@aws-amplify](https://github.com/aws-amplify)/core as rollup external ([20a8bf8](https://github.com/powerful23/aws-amplify/commit/20a8bf8))
+
+
+
+
 <a name="3.0.3"></a>
 ## [3.0.3](https://github.com/aws-amplify/amplify-js/compare/aws-amplify-angular@3.0.3-unstable.4...aws-amplify-angular@3.0.3) (2019-05-14)
 

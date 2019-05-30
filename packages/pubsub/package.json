@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/pubsub",
-  "version": "2.0.0-preview.0",
+  "version": "2.0.0-preview.1",
   "description": "Pubsub category of aws-amplify",
   "main": "./index.js",
   "module": "./esm/index.js",
