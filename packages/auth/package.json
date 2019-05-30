@@ -35,8 +35,8 @@
   "devDependencies": {
   },
   "peerDependencies": {
-    "@aws-amplify/cache": "2.0.x",
-    "@aws-amplify/core": "2.0.x"
+    "@aws-amplify/cache": "2.0.0-preview.0",
+    "@aws-amplify/core": "2.0.0-preview.0"
   },
   "dependencies": {
     "amazon-cognito-identity-js": "^3.0.12",

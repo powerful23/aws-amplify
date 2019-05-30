@@ -23,9 +23,6 @@
     "format": "tsfmt --useTsfmt tsfmt.json -r src/**/*.ts",
     "lint": "tslint 'src/**/*.ts'"
   },
-  "react-native": {
-    "./lib/index.js": "./lib/reactnative.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aws/aws-amplify.git"
@@ -39,7 +36,7 @@
   "devDependencies": {
   },
   "peerDependencies": {
-    "@aws-amplify/core": "2.0.x"
+    "@aws-amplify/core": "2.0.0-preivew.0"
   },
   "jest": {
     "globals": {

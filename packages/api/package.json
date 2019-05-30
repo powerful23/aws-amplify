@@ -36,9 +36,9 @@
     "prettier": "^1.7.4"
   },
   "peerDependencies": {
-    "@aws-amplify/auth": "2.0.x",
-    "@aws-amplify/cache": "2.0.x",
-    "@aws-amplify/core": "2.0.x"
+    "@aws-amplify/auth": "2.0.0-preview.0",
+    "@aws-amplify/cache": "2.0.0-preview.0",
+    "@aws-amplify/core": "2.0.0-preview.0"
   },
   "dependencies": {
     "axios": "^0.17.0",

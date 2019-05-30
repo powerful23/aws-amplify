@@ -36,7 +36,7 @@
     "cpx": "^1.5.0"
   },
   "peerDependencies": {
-    "@aws-amplify/core": "2.0.x"
+    "@aws-amplify/core": "2.0.0-preivew.0"
   },
   "dependencies": {
     "uuid": "^3.2.1",

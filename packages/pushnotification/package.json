@@ -29,8 +29,8 @@
   "devDependencies": {
   },
   "peerDependencies": {
-    "@aws-amplify/core": "2.0.x",
-    "@aws-amplify/analytics": "2.0.x"
+    "@aws-amplify/core": "2.0.0-preview.0",
+    "@aws-amplify/analytics": "2.0.0-preview.0"
   },
   "peerdependencies": {
     "react-native": "^0.55.0"
