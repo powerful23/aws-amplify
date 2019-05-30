@@ -36,11 +36,12 @@
   "devDependencies": {
   },
   "peerDependencies": {
-    "@aws-amplify/cache": "2.0.0-preview.0",
-    "@aws-amplify/core": "2.0.0-preview.0"
+    
   },
   "dependencies": {
-    "uuid": "^3.2.1"
+    "uuid": "^3.2.1",
+    "@aws-amplify/cache": "2.0.0-preview.0",
+    "@aws-amplify/core": "2.0.0-preview.0"
   },
   "jest": {
     "globals": {

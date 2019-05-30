@@ -70,13 +70,13 @@
     "rxjs-compat": "^6.2.1"
   },
   "peerDependencies": {
-    "@aws-amplify/auth": "2.0.0-preview.0",
-    "@aws-amplify/analytics": "2.0.0-preview.0",
-    "@aws-amplify/api": "2.0.0-preview.0",
-    "@aws-amplify/core": "2.0.0-preview.0",
-    "@aws-amplify/interactions": "2.0.0-preview.0",
-    "@aws-amplify/storage": "2.0.0-preview.0",
-    "@aws-amplify/ui": "2.0.0-preview.0",
-    "@aws-amplify/xr": "1.0.0-preview.0"
+    "@aws-amplify/auth": "^2.0.0-preview.0",
+    "@aws-amplify/analytics": "^2.0.0-preview.0",
+    "@aws-amplify/api": "^2.0.0-preview.0",
+    "@aws-amplify/core": "^2.0.0-preview.0",
+    "@aws-amplify/interactions": "^2.0.0-preview.0",
+    "@aws-amplify/storage": "^2.0.0-preview.0",
+    "@aws-amplify/ui": "^2.0.0-preview.0",
+    "@aws-amplify/xr": "^1.0.0-preview.0"
   }
 }

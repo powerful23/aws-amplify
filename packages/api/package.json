@@ -36,15 +36,16 @@
     "prettier": "^1.7.4"
   },
   "peerDependencies": {
-    "@aws-amplify/auth": "2.0.0-preview.0",
-    "@aws-amplify/cache": "2.0.0-preview.0",
-    "@aws-amplify/core": "2.0.0-preview.0"
+    
   },
   "dependencies": {
     "axios": "^0.17.0",
     "graphql": "0.13.0",
     "uuid": "^3.2.1",
-    "zen-observable": "^0.8.6"
+    "zen-observable": "^0.8.6",
+    "@aws-amplify/auth": "2.0.0-preview.0",
+    "@aws-amplify/cache": "2.0.0-preview.0",
+    "@aws-amplify/core": "2.0.0-preview.0"
   },
   "jest": {
     "globals": {

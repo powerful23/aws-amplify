@@ -34,7 +34,7 @@
   "homepage": "https://github.com/aws/aws-amplify#readme",
   "devDependencies": {
   },
-  "peerDependencies": {
+  "dependencies": {
     "@aws-amplify/core": "2.0.0-preivew.0"
   },
   "jest": {

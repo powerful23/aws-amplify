@@ -28,11 +28,11 @@
   "homepage": "https://github.com/aws/aws-amplify#readme",
   "devDependencies": {
   },
-  "peerDependencies": {
+  "dependencies": {
     "@aws-amplify/core": "2.0.0-preview.0",
     "@aws-amplify/analytics": "2.0.0-preview.0"
   },
-  "peerdependencies": {
+  "peerDependencies": {
     "react-native": "^0.55.0"
   },
   "jest": {

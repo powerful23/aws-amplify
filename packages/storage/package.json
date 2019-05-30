@@ -35,7 +35,7 @@
   "devDependencies": {
     "typescript": "^3.2.2"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@aws-amplify/core": "2.0.0-preview.0"
   },
   "jest": {
