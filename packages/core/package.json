@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/core",
-  "version": "1.0.27",
+  "version": "2.0.0",
   "description": "Core category of aws-amplify",
   "main": "./index.js",
   "module": "./esm/index.js",
@@ -24,11 +24,6 @@
     "clean": "rimraf esm cjs dist",
     "format": "tsfmt --useTsfmt tsfmt.json -r src/**/*.ts",
     "lint": "tslint 'src/**/*.ts'"
-  },
-  "react-native": {
-    "./lib/ClientDevice": "./lib/ClientDevice/reactnative.js",
-    "./lib/RNComponents": "./lib/RNComponents/reactnative.js",
-    "./lib/StorageHelper": "./lib/StorageHelper/reactnative.js"
   },
   "repository": {
     "type": "git",

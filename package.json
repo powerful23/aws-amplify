@@ -40,6 +40,7 @@
   "devDependencies": {
     "@types/jest": "^20.0.7",
     "@types/node": "^8.9.5",
+    "@types/zen-observable": "^0.5.3",
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
