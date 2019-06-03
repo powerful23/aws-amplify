@@ -1,6 +1,6 @@
 {
   "name": "@aws-amplify/pubsub",
-  "version": "2.0.0-preview.0",
+  "version": "2.0.0-preview.1",
   "description": "Pubsub category of aws-amplify",
   "main": "./index.js",
   "module": "./esm/index.js",
@@ -35,13 +35,10 @@
   "devDependencies": {
     "cpx": "^1.5.0"
   },
-  "peerDependencies": {
-    
-  },
   "dependencies": {
+    "@aws-amplify/core": "2.0.0-preview.1",
     "uuid": "^3.2.1",
-    "zen-observable": "^0.8.6",
-    "@aws-amplify/core": "2.0.0-preview.0"
+    "zen-observable": "^0.8.6"
   },
   "jest": {
     "globals": {
