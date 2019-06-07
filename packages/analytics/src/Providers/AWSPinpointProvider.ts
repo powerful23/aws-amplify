@@ -25,6 +25,8 @@ import Cache from '@aws-amplify/cache';
 
 import { AnalyticsProvider } from '../types';
 import { v1 as uuid } from 'uuid';
+import axios from 'axios';
+
 
 const AMPLIFY_SYMBOL = ((typeof Symbol !== 'undefined' && typeof Symbol.for === 'function') ?
     Symbol.for('amplify_default') : '@@amplify_default') as Symbol;
@@ -49,12 +51,14 @@ export class AWSPinpointProvider implements AnalyticsProvider {
 
     private _config;
     private pinpointClient;
+    private pinpointClient2;
     private _sessionId;
     private _sessionStartTimestamp;
     private _buffer;
     private _clientInfo;
     private _timer;
     private _endpointGenerating = true;
+
 
     constructor(config?) {
         this._buffer = [];
@@ -288,6 +292,8 @@ export class AWSPinpointProvider implements AnalyticsProvider {
 
     private async _pinpointPutEvents(eventParams) {
         logger.debug('pinpoint put events with params', eventParams);
+
+        this.pinpointClient2.putEvents(eventParams);
         return new Promise<any>((res, rej) => {
             const request = this.pinpointClient.putEvents(eventParams);
             // in order to keep backward compatiblity
@@ -479,6 +485,7 @@ export class AWSPinpointProvider implements AnalyticsProvider {
         const { region } = config;
         logger.debug('init clients with credentials', credentials);
         this.pinpointClient = new Pinpoint({ region, credentials });
+        this.pinpointClient2 = new MyPinpoint({ region, credentials });
         if (Platform.isReactNative) {
             this.pinpointClient.customizeRequests(function(request) {
                 request.on('build', function(req) {
@@ -586,6 +593,59 @@ export class AWSPinpointProvider implements AnalyticsProvider {
             });
     }
 }
+
+class MyPinpoint {
+    public credentials;
+    public region;
+
+    constructor(params) {
+        this.region = params.region;
+        this.credentials = params.credentials;
+    }
+    putEvents(data) {
+        const serviceInfo = {
+            service: 'mobiletargeting',
+            region: this.region
+        };
+        const { EventsRequest } = data;
+        return this._makeAWSRequest({
+            url: `https://pinpoint.${this.region}.amazonaws.com/v1/apps/${data.ApplicationId}/events/legacy`,
+            data: EventsRequest
+        }, this.credentials, serviceInfo);
+    }
+    _makeAWSRequest(params, credentials, serviceInfo) {
+        const { url, data } = params;
+        const httpRequest = {
+            method: 'POST',
+            url,
+            headers: {
+                'X-Amz-User-Agent': 'aws-amplify-v2.0',
+            },
+            data: JSON.stringify(data),
+            responseType: 'json'
+        };
+        const creds = {
+            secret_key: credentials.secretAccessKey,
+            access_key: credentials.accessKeyId,
+            session_token: credentials.sessionToken,
+        };
+
+        Signer.sign(httpRequest, creds, serviceInfo);
+
+        const fetchOptions:any = {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: { ...httpRequest.headers, 'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        };
+
+        return fetch(url, fetchOptions);
+        // return axios(httpRequest);
+    }
+}
+
+export { MyPinpoint };
 
 /**
  * @deprecated use named import

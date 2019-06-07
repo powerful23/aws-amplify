@@ -12,22 +12,25 @@
  */
 
 import { ConsoleLogger as Logger } from './Logger';
-import { AWS } from './Facet';
 import { parse, format } from 'url';
+ 
+import CryptoJS from 'crypto-js/core';
+import 'crypto-js/lib-typedarrays'; // necessary for crypto js
+import SHA256 from 'crypto-js/sha256';
+import HmacSHA256 from 'crypto-js/hmac-sha256';
 
 const logger = new Logger('Signer');
-const crypto = AWS['util'].crypto;
 
 const DEFAULT_ALGORITHM = 'AWS4-HMAC-SHA256';
 const IOT_SERVICE_NAME = 'iotdevicegateway';
 
-const encrypt = function(key, src, encoding?) {
-    return crypto.lib.createHmac('sha256', key).update(src, 'utf8').digest(encoding);
+const encrypt = function(key, src) {
+    return HmacSHA256(src, key);
 };
 
 const hash = function(src) {
     const arg = src || '';
-    return crypto.createHash('sha256').update(arg, 'utf8').digest('hex');
+    return SHA256(arg).toString();
 };
 
 /**
@@ -206,7 +209,7 @@ const get_signing_key = function(secret_key, d_str, service_info) {
 };
 
 const get_signature = function(signing_key, str_to_sign) {
-    return encrypt(signing_key, str_to_sign, 'hex');
+    return encrypt(signing_key, str_to_sign);
 };
 
 /**
@@ -273,6 +276,8 @@ const sign = function(request, access_info, service_info = null) {
     if (access_info.session_token) {
         request.headers['X-Amz-Security-Token'] = access_info.session_token;
     }
+
+    // request.headers['X-Amz-Content-Sha256'] = SHA256(JSON.stringify(request.data)).toString();
 
     // Task 1: Create a Canonical Request
     const request_str = canonical_request(request);
