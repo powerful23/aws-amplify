@@ -19,13 +19,11 @@ import {
     JS,
     Hub
 } from '@aws-amplify/core';
-import * as Pinpoint from 'aws-sdk/clients/pinpoint';
 
 import Cache from '@aws-amplify/cache';
 
 import { AnalyticsProvider } from '../types';
 import { v1 as uuid } from 'uuid';
-import axios from 'axios';
 
 
 const AMPLIFY_SYMBOL = ((typeof Symbol !== 'undefined' && typeof Symbol.for === 'function') ?
@@ -51,7 +49,6 @@ export class AWSPinpointProvider implements AnalyticsProvider {
 
     private _config;
     private pinpointClient;
-    private pinpointClient2;
     private _sessionId;
     private _sessionStartTimestamp;
     private _buffer;
@@ -293,36 +290,36 @@ export class AWSPinpointProvider implements AnalyticsProvider {
     private async _pinpointPutEvents(eventParams) {
         logger.debug('pinpoint put events with params', eventParams);
 
-        this.pinpointClient2.putEvents(eventParams);
-        return new Promise<any>((res, rej) => {
-            const request = this.pinpointClient.putEvents(eventParams);
-            // in order to keep backward compatiblity
-            // we are using a legacy api: /apps/{appid}/events/legacy
-            // so that users don't need to update their IAM Policy
-            // will use the formal one in the next break release
-            request.on('build', function() {
-                request.httpRequest.path = request.httpRequest.path + '/legacy';
-            });
+        return this.pinpointClient.putEvents(eventParams);
+        // return new Promise<any>((res, rej) => {
+        //     const request = this.pinpointClient.putEvents(eventParams);
+        //     // in order to keep backward compatiblity
+        //     // we are using a legacy api: /apps/{appid}/events/legacy
+        //     // so that users don't need to update their IAM Policy
+        //     // will use the formal one in the next break release
+        //     request.on('build', function() {
+        //         request.httpRequest.path = request.httpRequest.path + '/legacy';
+        //     });
 
-            request.send((err, data) => {
-                if (err) {
-                    logger.error('record event failed. ', err);
-                    logger.warn(
-                        'If you have not updated your Pinpoint IAM Policy' + 
-                        ' with the Action: \"mobiletargeting:PutEvents\" yet, please do it.' + 
-                        ' This action is not necessary for now' + 
-                        ' but in order to avoid breaking changes in the future,' + 
-                        ' please update it as soon as possible.'
-                    );
-                    res(false);
-                }
-                else {
-                    this._endpointGenerating = false;
-                    logger.debug('record event success. ', data);
-                    res(true);
-                }
-            });
-        });
+        //     request.send((err, data) => {
+        //         if (err) {
+        //             logger.error('record event failed. ', err);
+        //             logger.warn(
+        //                 'If you have not updated your Pinpoint IAM Policy' + 
+        //                 ' with the Action: \"mobiletargeting:PutEvents\" yet, please do it.' + 
+        //                 ' This action is not necessary for now' + 
+        //                 ' but in order to avoid breaking changes in the future,' + 
+        //                 ' please update it as soon as possible.'
+        //             );
+        //             res(false);
+        //         }
+        //         else {
+        //             this._endpointGenerating = false;
+        //             logger.debug('record event success. ', data);
+        //             res(true);
+        //         }
+        //     });
+        // });
     }
 
     /**
@@ -484,8 +481,7 @@ export class AWSPinpointProvider implements AnalyticsProvider {
         this._config.credentials = credentials;
         const { region } = config;
         logger.debug('init clients with credentials', credentials);
-        this.pinpointClient = new Pinpoint({ region, credentials });
-        this.pinpointClient2 = new MyPinpoint({ region, credentials });
+        this.pinpointClient = new MyPinpoint({ region, credentials });
         if (Platform.isReactNative) {
             this.pinpointClient.customizeRequests(function(request) {
                 request.on('build', function(req) {

@@ -3,7 +3,7 @@ module.exports = {
         'aws-amplify-core.min': './cjs/index.js'
     },
     externals: [
-        'aws-sdk/global'
+        'axios'
     ],
     output: {
         filename: '[name].js',

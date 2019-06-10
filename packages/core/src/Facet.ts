@@ -11,5 +11,5 @@
  * and limitations under the License.
  */
 
-import * as AWS from 'aws-sdk/global';
-export { AWS };
+// import * as AWS from 'aws-sdk/global';
+// export { AWS };
