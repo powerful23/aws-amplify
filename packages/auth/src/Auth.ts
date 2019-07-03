@@ -213,7 +213,7 @@ export default class AuthClass {
 
             // **NOTE** - Remove this in a future major release as it is a breaking change
             urlListener(({ url }) => {
-                this._handleAuthResponse(url);
+                    this._handleAuthResponse(url);
             });
         }
 
@@ -1526,13 +1526,16 @@ export default class AuthClass {
             throw new Error(`OAuth responses require a User Pool defined in config`);
         }
 
+        const currentUrl = URL || (JS.browserOrNode().isBrowser ? window.location.href : null);
+        if (!currentUrl) {
+            return;
+        }
+
         dispatchAuthEvent(
             'parsingCallbackUrl', 
             { url: URL },
             `The callback url is being parsed`
         );
-
-        const currentUrl = URL || (JS.browserOrNode().isBrowser ? window.location.href : null);
 
         const hasCodeOrError = !!(parse(currentUrl).query || '')
             .split('&')
